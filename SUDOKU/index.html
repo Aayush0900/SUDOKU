@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sudoku</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="UTF-8">
+	<style type="text/css">
+		input::-webkit-outer-spin-button,
+		input::-webkit-inner-spin-button{
+			-webkit-appearance: none;
+			margin:0;
+		}
+	</style>
+</head>
+<body>
+	<div class="page-container">
+		
+		<header>
+			
+			<h2 style="color: BLUE; text-align: center; number-decoration: underline;" strong id='head'>Sudoku Game</h2>
+			<div id="diff">
+				<label>Difficulty Level:</label>&nbsp;
+				<select id="type">
+					<option selected value="Select">Select Difficulty Level</option>
+					<option value="easy">easy</option>
+					<option value="medium">medium</option>
+					<option value="hard">hard</option>
+				</select>
+			</div>
+
+			<button id="create">Create New Game</button>
+
+			<hr style=" border-radius: 4px solid red;">
+
+
+		</header>
+
+		<main >
+			<div id="container">
+				<table id="grid" border="1" style="border-collapse: collapse;">
+					<tr class="row">
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="0"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="1"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="2"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="3"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="4"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="5"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="6"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="7"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="8"></td>
+					</tr>
+
+					<tr class="row">
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="9"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="10"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="11"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="12"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="13"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="14"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="15"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="16"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="17"></td>
+					</tr>
+
+					<tr class="row">
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="18"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="19"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="20"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="21"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="22"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="23"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="24"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="25"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="26"></td>
+					</tr>
+
+					<tr class="row">
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="27"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="28"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="29"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="30"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="31"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="32"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="33"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="34"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="35"></td>
+					</tr>
+
+					<tr class="row">
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="36"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="37"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="38"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="39"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="40"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="41"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="42"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="43"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="44"></td>
+					</tr>
+
+					<tr class="row">
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="45"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="46"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="47"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="48"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="49"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="50"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="51"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="52"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="53"></td>
+					</tr>
+
+					<tr class="row">
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="54"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="55"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="56"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="57"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="58"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="59"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="60"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="61"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="62"></td>
+					</tr>
+
+					<tr class="row">
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="63"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="64"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="65"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="66"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="67"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="68"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="69"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="70"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="71"></td>
+					</tr>
+
+					<tr class="row">
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="72"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="73"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="74"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="75"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="76"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="77"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="78"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="79"></td>
+						<td ><input type="number" class="cell" maxlength="1" value=""  id="80"></td>
+					</tr>
+
+				</table>	
+			</div>
+		</main>
+		<button id="submit1">submit</button>
+		
+		<button id="clear">clear</button>
+		
+		<!-- <button id="solution">Solution</button> -->
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>

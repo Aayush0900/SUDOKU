@@ -1,0 +1,98 @@
+hr{
+	border: 2px solid red;
+}
+
+input{
+	width:35px;
+	height: 35px;
+}
+div #container{
+	margin-top: 20px;
+	display: none;
+	vertical-align: center;
+    /*padding-left: 200px;*/
+    padding-right: -300px;
+    /*background-color: orange;*/
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/*#grid{
+	border: 1px solid green;
+}*/
+
+.cell{
+	border:1px solid grey;
+	text-align: center;
+	background-color: #6d7985f2;
+	/*font-size: 14px;*/
+	font-weight: bold;
+}
+
+table{
+	/*margin-top: 20px;*/
+	margin: 1px auto;
+}
+
+td{
+	height: 30px;
+	width: 30px;
+	/*border: 1px solid black;*/
+	text-align: center;
+	background-color: blue;
+}
+
+td:first-child{
+	border-left:3px solid;
+	text-align: center;
+}
+
+td:nth-child(3n){
+	border-right: 3px solid;
+}
+
+tr:first-child{
+	border-top: 3px solid;
+}
+
+tr:nth-child(3n){
+	border-bottom: 3px solid;
+}
+
+
+#create{
+	margin-top: 5px;
+	padding-top: 3px;
+	text-align: center;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#submit1{
+	height: 20px;
+	width:100px;
+	display: block;
+	/*align-items: center;*/
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	/*border-radius: 3px solid blue;*/
+	display: none;
+	background-color: black;
+	color: white;
+}
+
+#clear{
+	height: 20px;
+	width:100px;
+	display: block;
+	/*align-items: center;*/
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	/*border-radius: 3px solid blue;*/
+	display: none;
+	background-color: black;
+	color: white;
+}
